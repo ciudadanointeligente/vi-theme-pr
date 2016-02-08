@@ -1,6 +1,6 @@
 from django.conf import settings
 from django.conf.urls import patterns, url
-from votai_them.views import MediaNaranjaView
+from votai_theme.views import MediaNaranjaView
 
 urlpatterns = patterns('',
                       url(r'^election/(?P<slug>[-\w]+)/soul-mate/?$',
