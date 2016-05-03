@@ -1,0 +1,17 @@
+{% load i18n %}
+{% load bootstrap_tags %}
+{% url 'registration_activate' activation_key as activation_key_url%}
+{% blocktrans with sitename=site.name siteurl=site.domain %}
+Tu (o alguien que pretende ser tu) ha tratado de registrar una cuenta en
+{{ sitename }}.
+Si no fuiste tu, por favor ignora este mail y tu dirección será removida
+de nuestros registros.
+
+
+Para activar esta cuenta, por favor haz click en el siguiente link antes de
+{{ expiration_days }} días:
+http://{{ sitename }}{{  activation_key_url }}
+
+--
+Muchas gracias el equipo de VotaInteligente.cl
+{% endblocktrans %}

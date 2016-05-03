@@ -1,0 +1,9 @@
+{% extends "registration/registration_base.html" %}
+{% load i18n %}
+{% load bootstrap_tags %}
+{% block title %}{% trans "Logged out" %}{% endblock %}
+{% block content %}
+{% trans "¡Te saliste!" %}
+Puedes volver a <a href="{% url 'auth_login' %}">entrar</a> si así lo deseas.
+
+{% endblock %}
