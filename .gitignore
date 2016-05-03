@@ -40,3 +40,8 @@ output/*/index.html
 
 # Sphinx
 docs/_build
+## VIM THINGS
+*.swp
+## Intermediate css
+votai_theme/static/sass/*.css
+votai_theme/static/sass/*.css.map
