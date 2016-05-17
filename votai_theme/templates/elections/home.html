@@ -8,7 +8,6 @@
 {% endblock extrajs %}
 
 {% block content %}
-  {% include 'popular_proposal/_popular_proposal_explanation.html' %}
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
   <script type="text/javascript" src="{% static 'js/jquery.gridAccordion.min.js' %}"></script>
@@ -24,9 +23,9 @@
             <script type="text/javascript">
             jQuery(document).ready(function($){
               screenwidth = $(".containerAccordion").width();
-              $('#gridaccordion-{{forloop.counter}}').gridAccordion({ 
-                width:screenwidth, height:250, columns:{{ featured_election.candidates.all|length }}, 
-                distance:2, closedPanelWidth:10, closedPanelHeight:10, alignType:'centerCenter', linkTarget: "_self", slideshow:true 
+              $('#gridaccordion-{{forloop.counter}}').gridAccordion({
+                width:screenwidth, height:250, columns:{{ featured_election.candidates.all|length }},
+                distance:2, closedPanelWidth:10, closedPanelHeight:10, alignType:'centerCenter', linkTarget: "_self", slideshow:true
               });
             });
             </script>
@@ -46,7 +45,7 @@
             </ul>
             <a href="{{ featured_election.get_absolute_url }}"><h3 class="portada">{{featured_election.name}}</h3></a>
             <div class="election-description">
-              <p>{{ featured_election.description|truncatewords:100 }}</p> 
+              <p>{{ featured_election.description|truncatewords:100 }}</p>
             </div>
           </li>
         {% endfor %}
@@ -64,7 +63,7 @@
             jQuery(document).ready(function($){
               screenwidth = $(".containerAccordion").width();
               $('#gridaccordion-{{forloop.counter}}').gridAccordion({
-                width:screenwidth, height:250, columns:{{ featured_election.candidates.all|length }}, 
+                width:screenwidth, height:250, columns:{{ featured_election.candidates.all|length }},
                 distance:2, closedPanelWidth:10, closedPanelHeight:10, alignType:'centerCenter', linkTarget: "_self", slideshow:true
               });
             });
@@ -85,7 +84,7 @@
             </ul>
             <a href="{{ featured_election.get_absolute_url }}"><h3 class="portada">{{ featured_election.name }}</h3></a>
             <div class="election-description">
-              <p>{{ featured_election.description|truncatewords:50 }}</p> 
+              <p>{{ featured_election.description|truncatewords:50 }}</p>
             </div>
           </li>
         {% endfor %}
@@ -102,7 +101,7 @@
           jQuery(document).ready(function($){
             screenwidth = $(".containerAccordion").width();
             $('#gridaccordion-{{forloop.counter}}').gridAccordion({
-              width:screenwidth, height:250, columns:{{featured_election.candidates.all|length}}, 
+              width:screenwidth, height:250, columns:{{featured_election.candidates.all|length}},
               distance:2, closedPanelWidth:10, closedPanelHeight:10, alignType:'centerCenter', linkTarget: "_self", slideshow:true
             });
           });
@@ -123,7 +122,7 @@
           </ul>
           <a href="{{ featured_election.get_absolute_url }}"><h3 class="portada">{{ featured_election.name }}</h3></a>
           <div class="election-description">
-            <p>{{ featured_election.description|truncatewords:33 }}</p> 
+            <p>{{ featured_election.description|truncatewords:33 }}</p>
           </div>
         </li>
         {% if forloop.counter == 3 %}
