@@ -39,7 +39,7 @@ $(function(){
           jQuery(document).ready(function($){
             screenwidth = $(".containerAccordion").width();
             $('#gridaccordion-{{forloop.counter}}').gridAccordion({
-              width:screenwidth, height:250, columns:{{election.candidates.all|length}}, 
+              width:screenwidth, height:250, columns:{{election.candidates.all|length}},
               distance:2, closedPanelWidth:10, closedPanelHeight:10, alignType:'centerCenter', linkTarget: "_self", slideshow:true
             });
           });
@@ -60,7 +60,7 @@ $(function(){
           </ul>
           <a href="{{ election.get_absolute_url }}"><h3 class="portada">{{ election.name }}</h3></a>
           <div class="election-description">
-            <p>{{ election.description|truncatewords:33 }}</p> 
+            <p>{{ election.description|truncatewords:33 }}</p>
           </div>
         </li>
          {% if forloop.counter|divisibleby:3 %}
@@ -69,8 +69,6 @@ $(function(){
         {% endif %}
         {% endfor %}
       </ul>
-
-        <a href="{% url 'popular_proposals:propose' slug=area.id %}" class="btn btn-primary btn-lg active btn-block">{% blocktrans with area=area.name %}Crear una propuesta ciudadana{% endblocktrans %}</a>
     </div>
 
   </div>
