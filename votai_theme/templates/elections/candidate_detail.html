@@ -89,16 +89,25 @@
 			<div class="panel-heading">{{category.name}}</div>
 			<div class="panel-body">
 				{% for topic in category.topics.all %}
-				<div class="question-answer" {% if forloop.counter >= 2 %}style="margin-top:5px;" {% endif %}>
-					<p class="question">
-						{{topic.label}}
-					</p>
-					<p class="answer">
-						{% get_taken_position_for topic candidate %}
-						<!-- source -->
-						<!-- eosource -->
-					</p>
-				</div>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="question-answer" {% if forloop.counter >= 2 %}style="margin-top:5px;" {% endif %}>
+              <p class="question">
+                {{topic.label}}
+              </p>
+              <p class="answer">
+                {% get_taken_position_for topic candidate %}
+                <!-- source -->
+                <!-- eosource -->
+              </p>
+            </div>
+          </div>
+
+        {% if forloop.counter|divisibleby:3 %}
+        </div><div class="row">
+        {% endif %}
+
+        </div>
 				{% endfor %}
 			</div>
 		</div>
