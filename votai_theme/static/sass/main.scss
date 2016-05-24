@@ -1212,7 +1212,7 @@ animation: doscaras 4s infinite;
   color: $ribbon-color;
 }
 
-#main-election > div > a > .ribbon {
+.container-candidates > div > a > .ribbon {
 	top: 38%;
 	@include ribbon-base;
 }
@@ -1301,7 +1301,7 @@ animation: doscaras 4s infinite;
 }
 
 @media (min-width: 768px) {
-  #main-election > div > a > .ribbon {
+  .container.candidates > div > a > .ribbon {
     top: 34%;
     left: -4%;
     width: 107%;
@@ -1330,7 +1330,7 @@ animation: doscaras 4s infinite;
 }
 
 @media (min-width: 1024px) {
-  #main-election > div > a > .ribbon {
+  .container-candidates > div > a > .ribbon {
     top: 31%;
     left: 0%;
     width: 100%;
@@ -1350,7 +1350,7 @@ animation: doscaras 4s infinite;
 }
 
 @media (min-width: 1440px) {
-  #main-election > div > a > .ribbon {
+  .container-candidates > div > a > .ribbon {
     top: 34%;
     max-width: 200px;
   }
