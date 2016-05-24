@@ -1,12 +1,18 @@
-<ul class="list-unstyled">
+<ul class="list-inline">
     {% for contact_detail in candidate.contact_details.all %}
         <li>
             <a href="{{contact_detail.value}}" class="social-link-candidate" target="_blank">
                 {% if contact_detail.contact_type == "TWITTER" %}
-                    <i class="fa fa-twitter"></i>
+                    <i class="fa fa-twitter fa-2x"></i>
                 {% endif %}
                 {% if contact_detail.contact_type == "FACEBOOK" %}
-                    <i class="fa fa-facebook-official"></i>
+                    <i class="fa fa-facebook-official fa-2x"></i>
+                {% endif %}
+                {% if contact_detail.contact_type == "EMAIL" %}
+                    <i class="fa fa-envelop-o fa-2x"></i>
+                {% endif %}
+                {% if contact_detail.contact_type == "URL" %}
+                    <i class="fa fa-globe fa-2x"></i>
                 {% endif %}
                 {{contact_detail.label}}
             </a>
