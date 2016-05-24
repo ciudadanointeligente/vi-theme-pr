@@ -1197,33 +1197,16 @@ animation: doscaras 4s infinite;
 
 @mixin ribbon-base {
 	position: absolute;
-  left: -5%;
-  width: 110%;
-  height: 40px;
+  width: 50%;
   background: $alert-warning-border;
-  align-content: center;
   text-align: center;
-  transform: rotate(-45deg);
-    -ms-transform: rotate(-45deg);
-    -webkit-transform: rotate(-45deg);
-  max-width: 360px;
-  padding: 4px;
-  font-size: 24px;
   color: $ribbon-color;
 }
 
 .container-candidates > div > a > .ribbon {
-	top: 38%;
+	top: 3%;
 	@include ribbon-base;
 }
-
-/*.container-candidates .ribbon {
-	font-size: 16px;
-	top: 62px;
-	left: 10px;
-	width: 90%;
-	padding: 8px;
-}*/
 
 #candidate-img-profile > .ribbon {
   top: 42%;
@@ -1330,7 +1313,7 @@ animation: doscaras 4s infinite;
 }
 
 @media (min-width: 1024px) {
-  .container-candidates > div > a > .ribbon {
+  /*.container-candidates > div > a > .ribbon {
     top: 31%;
     left: 0%;
     width: 100%;
@@ -1338,7 +1321,7 @@ animation: doscaras 4s infinite;
     max-width: 160px;
     font-size: 18px;
     padding: 0px;
-  }
+  }*/
 
   #candidate-img-profile > .ribbon {
     top: 34%;
@@ -1350,10 +1333,10 @@ animation: doscaras 4s infinite;
 }
 
 @media (min-width: 1440px) {
-  .container-candidates > div > a > .ribbon {
+  /*.container-candidates > div > a > .ribbon {
     top: 34%;
     max-width: 200px;
-  }
+  }*/
 
   #candidate-img-profile > .ribbon {
     top: 36%;
