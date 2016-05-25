@@ -500,6 +500,12 @@ input, button, select, textarea {
 	color: $main-background-color;
 }
 
+.container-candidates {
+  .main-election-candidates-links {
+    background-color: #FFF;
+  }
+}
+
 .container-candidates p {
 	background: $main-background-color;
 	padding: 5px;
