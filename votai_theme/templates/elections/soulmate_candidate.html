@@ -86,9 +86,13 @@ $(document).ready(function(){
 		</div>
 		{% endfor %}
 
-		<div>
+    {% if election.categories.count %}
+    <div>
 			<button type="button" id="btn-find-soulmate" class="btn btn-success" onClick="ga('send', 'event', 'find-soulmate', 'click');"><i class="fa fa-heart"></i> {% trans "Encontrar mi 1/2 naranja" %}</button>
 		</div>
+    {% else %}
+    <p>Estamos preparando la información para encontrar tu mejor 1/2 naranja!</p>
+    {% endif %}
 		{% csrf_token %}
 		</form>
 	</div>
