@@ -11,7 +11,7 @@
 {% block mainelection %}
 <!-- face-to-face -->
 <div id="compare-candidates">
-	
+
 	<div class="row">
 		{% if first_candidate.id and second_candidate.id %}
 		<div class="col-md-12">
@@ -22,7 +22,7 @@
 			</div>
 		</div>
 		{% endif %}
-		<div class="col-md-6">
+		<div class="col-sm-6 col-md-6">
 			<select data-placeholder="{% trans "Selecciona un candidato" %}" name="candidate_one" id="candidate_one" class="chosen-select" style="width:100%">
 				<option value=""></option>
 				{% for candidato in election.candidates.all %}
@@ -33,7 +33,7 @@
 				<i class="icon-chevron-down"></i>
 			</select>
 		</div>
-		<div class="col-md-6">
+		<div class="col-sm-6 col-md-6">
 			<select data-placeholder="{% trans "Selecciona un candidato" %}" name="candidate_two" id="candidate_two" class="chosen-select" style="width:100%">
 				<option value=""></option>
 				{% for candidato in election.candidates.all %}
@@ -60,7 +60,7 @@
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-6">
+							<div class="col-sm-6 col-md-6">
 								<div class="fondo-blanco contenedor">
 									<p>
 										{% get_taken_position_for topic first_candidate only_text=True %}
@@ -68,7 +68,7 @@
 									<p class="text-right">{{ first_candidate.name }}</p>
 								</div>
 							</div>
-							<div class="col-md-6">
+							<div class="col-sm-6 col-md-6">
 								<div class="fondo-blanco contenedor">
 									<p>
 										{% get_taken_position_for topic second_candidate only_text=True %}
@@ -84,7 +84,7 @@
 			{% else %}
 			<div class="alert alert-info">{% trans "Aquí se mostraran las diferencias y similitudes entre los candidatos que selecciones." %}</div>
 			{% endif %}
-		
+
 	</div>
 	<!-- EOF hidden for small devices -->
 	<!-- display only for small devices -->
@@ -92,7 +92,7 @@
 		{% if first_candidate.id and second_candidate.id %}
 
 			{% for category in election.categories.all %}
-				
+
 			<div class="panel panel-default">
 				<div class="panel-heading">
 					<h3 class="panel-title">{{category.name}}</h3>
@@ -102,12 +102,12 @@
 					{% for topic in category.topics.all %}
 					<h3 class="panel-title">{{ topic.label }}</h3>
 					<div class="response-candidate-one">
-						<p> {% get_taken_position_for topic first_candidate %} 
+						<p> {% get_taken_position_for topic first_candidate %}
 						</p>
 						<p class="text-right"><small>{{ first_candidate.name }}</small></p>
 					</div>
 					<div class="response-candidate-two">
-						<p> {% get_taken_position_for topic second_candidate %} 
+						<p> {% get_taken_position_for topic second_candidate %}
 						</p>
 						<p class="text-right"><small>{{ second_candidate.name }}</small></p>
 					</div>
@@ -116,14 +116,14 @@
 				{% endif %}
 
 			</div>
-				
+
 			{% endfor %}
 		{% else %}
 		<div class="alert alert-info">{% trans "Aquí se mostraran las diferencias y similitudes entre los candidatos que selecciones." %}</div>
 		{% endif %}
 	</div>
 	<!-- display only for small devices -->
-	
+
 </div>
 
 <!-- eof face-to-face -->
