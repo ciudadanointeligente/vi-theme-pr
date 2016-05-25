@@ -15,7 +15,7 @@
 	<form action="{% url 'ask_detail_view' election.slug %}"  role="form" method="post">{% csrf_token %}
 		<div class="row">
 			<div class="col-md-8">
-				
+
 				<div class="form-group">
 					<label for="name">{% trans "Yo soy" %}</label>
 					<input type="text" class="form-control" id="id_author_name" maxlength="512" name="author_name" type="text"  placeholder="{% trans "Identifícate como quieras" %}">
@@ -49,15 +49,15 @@
 				</p>
 			</div>
 			<div class="col-md-4">
-				<button type="submit" class="btn btn-success"><i class="icon-edit"></i> {% trans "Enviar pregunta" %}</button>
+				<button type="submit" class="btn btn-success"><i class="fa fa-edit"></i> {% trans "Enviar pregunta" %}</button>
 			</div>
 		</div>
 	</form>
 </div>
 <div>
-	
+
 	{% if writeitmessages %}
-	
+
 	<div class="row">
 		<div class="col-md-8 recent-questions">
 			<h3>{% trans 'Preguntas recientes' %}</h3>
@@ -68,7 +68,7 @@
 			<form action="" class="form-inline" role="form">
 				<div class="input-group">
 					<input type="text" class="form-control" placeholder="Buscar pregunta">
-					<span class="input-group-addon"><i class="icon-search"></i></span>
+					<span class="input-group-addon"><i class="fa fa-search"></i></span>
 				</div>
 			</form>
 			{% endcomment %}
@@ -99,7 +99,7 @@
 			<form action="" class="form-inline" role="form">
 				<div class="input-group">
 					<input type="text" class="form-control" placeholder="Buscar pregunta">
-					<span class="input-group-addon"><i class="icon-search"></i></span>
+					<span class="input-group-addon"><i class="fa fa-search"></i></span>
 				</div>
 			</form>
 		</div>
