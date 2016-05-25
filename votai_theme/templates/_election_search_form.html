@@ -3,13 +3,13 @@
 {% load thumbnail %}
 {% load votainteligente_extras %}
     <div data-ng-app="votainteligente">
-      <div id="home-search" class="row" data-ng-controller="searchFormController">      
+      <div id="home-search" class="row" data-ng-controller="searchFormController">
 
             <div class="row form-group">
               <div class="col-md-8 col-md-offset-2">
                 <div class="input-group">
                   <span class="input-group-btn">
-                    <button class="btn btn-default"><i class="icon-search"></i></button>
+                    <button class="btn btn-default"><i class="fa fa-search"></i></button>
                   </span>
                   <input type="text" class="form-control" ng-enter="console.log('something')" id="id_q" name="q" placeholder="{% trans "Ingresa el nombre de tu comuna" %}" autocomplete="off" data-ng-model="searchElection">
                   <span class="input-group-btn">
@@ -18,7 +18,7 @@
                 </div>
               </div>
             </div>
-      
+
           <div class="elections-results">
               <ul class="list-inline" data-ng-show="searchElection">
                   <li data-ng-repeat="election in (filteredItems = (elections | filter:searchElection:comperator))">

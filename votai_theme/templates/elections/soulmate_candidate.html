@@ -26,7 +26,7 @@ $(document).ready(function(){
 
 		if( questions.length == answers.length ) {
 			$('#btn-find-soulmate').prop('disabled',true);
-			$('#btn-find-soulmate').html('<i class="icon-cogs"></i> {% trans "calculando" %}');
+			$('#btn-find-soulmate').html('<i class="fa fa-cogs"></i> {% trans "calculando" %}');
 
 			$.post("{% url 'soul_mate_detail_view' slug=election.slug %}",final_data, function(final_data){
 				$('#question-soulmate').remove();
@@ -87,7 +87,7 @@ $(document).ready(function(){
 		{% endfor %}
 
 		<div>
-			<button type="button" id="btn-find-soulmate" class="btn btn-success" onClick="ga('send', 'event', 'find-soulmate', 'click');"><i class="icon-heart"></i> {% trans "Encontrar mi 1/2 naranja" %}</button>
+			<button type="button" id="btn-find-soulmate" class="btn btn-success" onClick="ga('send', 'event', 'find-soulmate', 'click');"><i class="fa fa-heart"></i> {% trans "Encontrar mi 1/2 naranja" %}</button>
 		</div>
 		{% csrf_token %}
 		</form>
