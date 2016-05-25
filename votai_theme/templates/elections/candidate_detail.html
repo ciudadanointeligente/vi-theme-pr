@@ -51,7 +51,7 @@
 					{% include 'elections/candidates/links_extra_pages.html' with candidate=candidate %}
 
 					{% if 'facetoface'|val_navbars and election.uses_face_to_face  %}
-					<button type="button" class="btn btn-danger btn-lg btn-block" onClick="location.href='{% url 'face_to_face_one_candidate_detail_view' slug=election.slug slug_candidate_one=candidate.id %}'"><i class="fa fa-bolt"></i> {% trans "Compáralo con otro candidato" %}</button>
+					<button type="button" class="btn btn-danger btn-lg btn-block" onClick="location.href='{% url 'face_to_face_one_candidate_detail_view' slug=election.slug slug_candidate_one=candidate.id %}'"><i class="fa fa-bolt"></i> {% trans "Frente a Frente" %}</button>
 					{% endif %}
 
 				</div>
@@ -85,35 +85,39 @@
 				<h3>{% trans "Cuestionario" %} </h3>
 			</div>
 		</div>
-		{% for category in election.categories.all %}
-		<div class="panel panel-default">
-			<div class="panel-heading">{{category.name}}</div>
-			<div class="panel-body">
-				{% for topic in category.topics.all %}
-        <div class="row">
-          <div class="col-md-4">
-            <div class="question-answer" {% if forloop.counter >= 2 %}style="margin-top:5px;" {% endif %}>
-              <p class="question">
-                {{topic.label}}
-              </p>
-              <p class="answer">
-                {% get_taken_position_for topic candidate %}
-                <!-- source -->
-                <!-- eosource -->
-              </p>
+    {% if election.categories.count %}
+  		{% for category in election.categories.all %}
+  		<div class="panel panel-default">
+  			<div class="panel-heading">{{category.name}}</div>
+  			<div class="panel-body">
+  				{% for topic in category.topics.all %}
+          <div class="row">
+            <div class="col-md-4">
+              <div class="question-answer" {% if forloop.counter >= 2 %}style="margin-top:5px;" {% endif %}>
+                <p class="question">
+                  {{topic.label}}
+                </p>
+                <p class="answer">
+                  {% get_taken_position_for topic candidate %}
+                  <!-- source -->
+                  <!-- eosource -->
+                </p>
+              </div>
             </div>
+
+          {% if forloop.counter|divisibleby:3 %}
+          </div><div class="row">
+          {% endif %}
+
           </div>
-
-        {% if forloop.counter|divisibleby:3 %}
-        </div><div class="row">
-        {% endif %}
-
-        </div>
-				{% endfor %}
-			</div>
-		</div>
-		{% endfor %}
-	</div>
+  				{% endfor %}
+  			</div>
+  		</div>
+  		{% endfor %}
+    {% else %}
+    <p>Aún no contamos con un cuestionario!</p>
+    {% endif %}
+  </div>
 	{% endif %}
   {% include 'disqus.html' %}
 {% endblock mainelection %}
